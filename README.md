@@ -15,10 +15,9 @@ A page showing quotes to motivate/inspire you
 ### Todo:
 1. Show a random quote each time instead of showing them sequentially
 2. Read quotes from a json file
-3. Add a play/mute symbol which plays a motivational sound in the background
+3. Add a play/mute icon and play a motivational sound in the background
 4. Add "created with love ..." on the bottom
-5. Find more beautuful colors and use them
-
+5. Find a few more beautuful colors and use them
 
 Copyright © 2016 Andreas Loizou <andreas . L . Loizou @ [gmail.com]> 
 
