@@ -15,14 +15,15 @@ Created by Andreas Loizou - LACK3R, @andreas_lz _
 <style class="cp-pen-styles">
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:600);
 .page-wrap {
-  //  position: relative;
-  min-height: 100%;
-  /* equal to footer height */
-  margin-bottom: -45px; 
+    //  position: relative;
+    min-height: 100%;
+    /* equal to footer height */
+    
+    margin-bottom: -45px;
 }
 .page-wrap:after {
-  content: "";
-  display: block;
+    content: "";
+    display: block;
 }
 body {
     font-family: 'Open Sans', sans-serif;
@@ -62,60 +63,60 @@ p {
 .midnight {
     color: #2c3e50;
 }
-.site-footer{
-      margin-top: 0px;
+.site-footer {
+    margin-top: 0px;
     padding-top: 20px;
     /*border-top: 2px solid #2c3e50;*/
+    
     text-align: center;
 }
-
-  .site-footer > p {
+.site-footer > p {
     font-size: 10px;
     letter-spacing: .2em;
     padding-right: 6px;
-  }
+}
 </style>
 </head>
 
 <body>
     <div class="page-wrap">
-    <div class="text">
-        <p>
-            <span class="quote">Impossible is nothing.</span>
-            <span class="quote">You are confined only by the walls you build yourself.</span>
-            <span class="quote">New opportunities will appear out of nowhere.</span>
-            <span class="quote">Don't limit your challenges - challenge your limits.</span>
-            <span class="quote">You got a dream... You gotta protect it.</span>
-            <span class="quote">If anything can go wrong, Fix it!</span>
-            <span class="quote">When given a choice... take both!</span>
-            <span class="quote">Multiple projects lead to multiple successes.</span>
-            <span class="quote">Start at the top then work your way up. </span>
-            <span class="quote">Do it by the book ... but be the author!</span>
-            <span class="quote">When forced to compromise, ask for more.</span>
-            <span class="quote">If you can't win, change the rules.</span>
-            <span class="quote">If you can't change the rules, then ignore them.</span>
-            <span class="quote">Perfection is not optional.</span>
-            <span class="quote">When faced without a challenge, make one.</span>
-            <span class="quote">"No" simply means begin again at one level higher.</span>
-            <span class="quote">Don't walk when you can run.</span>
-            <span class="quote">When in doubt: THINK!</span>
-            <span class="quote">Patience is a virtue, but persistence to the point of success is a blessing.</span>
-            <span class="quote">The faster you move, the slower time passes, the longer you live.</span>
-            <span class="quote">The best way to predict the future is to create it yourself!</span>
-            <span class="quote">The ratio of something to nothing is infinite.</span>
-            <span class="quote">If you think it is impossible, then it is... for you.</span>
-            <span class="quote">The day before something is a breakthrough it's a crazy idea.</span>
-            <span class="quote">If it were easy it would have been done already.</span>
-            <span class="quote">Without a target you'll miss it every time.</span>
-            <span class="quote">If you can't measure it, you can't improve it.</span>
-            <span class="quote">The world's most precious resource is the persistent and passionate human mind.</span>
-            <span class="quote">Bureaucracy is an obstacle to be conquered with persistence, confidence and a bulldozer when necessary. </span>
-        </p>
-    </div>
+        <div class="text">
+            <p>
+                <span class="quote">Impossible is nothing.</span>
+                <span class="quote">You are confined only by the walls you build yourself.</span>
+                <span class="quote">New opportunities will appear out of nowhere.</span>
+                <span class="quote">Don't limit your challenges - challenge your limits.</span>
+                <span class="quote">You got a dream... You gotta protect it.</span>
+                <span class="quote">If anything can go wrong, Fix it!</span>
+                <span class="quote">When given a choice... take both!</span>
+                <span class="quote">Multiple projects lead to multiple successes.</span>
+                <span class="quote">Start at the top then work your way up. </span>
+                <span class="quote">Do it by the book ... but be the author!</span>
+                <span class="quote">When forced to compromise, ask for more.</span>
+                <span class="quote">If you can't win, change the rules.</span>
+                <span class="quote">If you can't change the rules, then ignore them.</span>
+                <span class="quote">Perfection is not optional.</span>
+                <span class="quote">When faced without a challenge, make one.</span>
+                <span class="quote">"No" simply means begin again at one level higher.</span>
+                <span class="quote">Don't walk when you can run.</span>
+                <span class="quote">When in doubt: THINK!</span>
+                <span class="quote">Patience is a virtue, but persistence to the point of success is a blessing.</span>
+                <span class="quote">The faster you move, the slower time passes, the longer you live.</span>
+                <span class="quote">The best way to predict the future is to create it yourself!</span>
+                <span class="quote">The ratio of something to nothing is infinite.</span>
+                <span class="quote">If you think it is impossible, then it is... for you.</span>
+                <span class="quote">The day before something is a breakthrough it's a crazy idea.</span>
+                <span class="quote">If it were easy it would have been done already.</span>
+                <span class="quote">Without a target you'll miss it every time.</span>
+                <span class="quote">If you can't measure it, you can't improve it.</span>
+                <span class="quote">The world's most precious resource is the persistent and passionate human mind.</span>
+                <span class="quote">Bureaucracy is an obstacle to be conquered with persistence, confidence and a bulldozer when necessary. </span>
+            </p>
+        </div>
     </div>
     <footer class="site-footer">
-        <p>Another thing made with <span class="pomegranate">❤︎</span> by <a href="https://twitter.com/andreas_lz">andreas_lz</a>.
-        Find this on <a href="https://github.com/lack3r/InspireMe">Github</a></p>
+        <p>Another thing made with <span class="pomegranate">❤︎</span> by <a href="https://twitter.com/andreas_lz">andreas_lz</a>. Find this on <a href="https://github.com/lack3r/InspireMe">Github</a>
+        </p>
     </footer>
 </body>
 
@@ -129,9 +130,13 @@ p {
 <script>
 var quotes = document.getElementsByClassName('quote');
 var quoteArray = [];
-var currentQuote = 1;
-var colorIndex = 1;
 var colors = ["wisteria", "belize", "pomegranate", "green", "midnight"];
+var currentQuote = randomQuoteIndex();
+var colorIndex = Math.floor((Math.random() * colors.length));
+
+function randomQuoteIndex() {
+    return Math.floor((Math.random() * quotes.length));
+}
 
 function changeQuote() {
     $('.quote:nth-child(' + currentQuote + ')').addClass(colors[colorIndex]);
@@ -151,8 +156,9 @@ function changeQuote() {
                 /*When finishing fading in and fading out a quote,
                 call the function at the next quote*/
                 callback: function() {
-                    increaseQuoteIndex();
-                    /*The following line is written because of a bag at textillate.js
+                    //increaseQuoteIndex();
+                    currentQuote = randomQuoteIndex();
+                    /*The following line is written because of a bug at textillate.js
                     and forces the in section to be enabled*/
                     $('.quote:nth-child(' + currentQuote + ')').textillate('in');
                     changeQuote();
@@ -162,6 +168,7 @@ function changeQuote() {
 }
 
 //Goes to the next Quote index
+//Not used
 function increaseQuoteIndex() {
         if (currentQuote == quotes.length) {
             currentQuote = 1;
@@ -169,7 +176,7 @@ function increaseQuoteIndex() {
             currentQuote = currentQuote + 1;
         }
     }
-    //Goes to the next Quote index
+    //Goes to the next color index
 function changeColor() {
     if (colorIndex == colors.length) {
         colorIndex = 1;
