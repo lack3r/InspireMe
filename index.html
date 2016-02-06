@@ -14,18 +14,28 @@ Created by Andreas Loizou - LACK3R, @andreas_lz _
 <link href="stylesheets/animate.css" rel="stylesheet">
 <style class="cp-pen-styles">
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:600);
+.page-wrap {
+  //  position: relative;
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -45px; 
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
 body {
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
     font-size: 40px;
 }
 .text {
-    position: relative;
+    position: absolute;
     width: 60%;
     left: 20%;
     right: -20%;
     top: 40%;
-    margin-top: -2.5%;
+    //margin-top: -2.5%;
 }
 p {
     display: inline-block;
@@ -52,10 +62,23 @@ p {
 .midnight {
     color: #2c3e50;
 }
+.site-footer{
+      margin-top: 0px;
+    padding-top: 20px;
+    /*border-top: 2px solid #2c3e50;*/
+    text-align: center;
+}
+
+  .site-footer > p {
+    font-size: 10px;
+    letter-spacing: .2em;
+    padding-right: 6px;
+  }
 </style>
 </head>
 
 <body>
+    <div class="page-wrap">
     <div class="text">
         <p>
             <span class="quote">Impossible is nothing.</span>
@@ -89,6 +112,11 @@ p {
             <span class="quote">Bureaucracy is an obstacle to be conquered with persistence, confidence and a bulldozer when necessary. </span>
         </p>
     </div>
+    </div>
+    <footer class="site-footer">
+        <p>Another thing made with <span class="pomegranate">❤︎</span> by <a href="https://twitter.com/andreas_lz">andreas_lz</a>.
+        Find this on <a href="https://github.com/lack3r/InspireMe">Github</a></p>
+    </footer>
 </body>
 
 
