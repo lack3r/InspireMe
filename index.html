@@ -15,15 +15,10 @@ Created by Andreas Loizou - LACK3R, @andreas_lz _
 <style class="cp-pen-styles">
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:600);
 .page-wrap {
-    //  position: relative;
-    min-height: 100%;
-    /* equal to footer height */
-    
-    margin-bottom: -45px;
-}
-.page-wrap:after {
-    content: "";
-    display: block;
+ min-height: 100%;
+	height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
+	height: 100%;
+	margin: 0 auto -155px; /* the bottom margin is the negative value of the footer's height */
 }
 body {
     font-family: 'Open Sans', sans-serif;
@@ -36,7 +31,6 @@ body {
     left: 20%;
     right: -20%;
     top: 40%;
-    //margin-top: -2.5%;
 }
 p {
     display: inline-block;
@@ -63,14 +57,15 @@ p {
 .midnight {
     color: #2c3e50;
 }
-.site-footer {
-    margin-top: 0px;
+.footer, .push {
+	height: 155px; /* .push must be the same height as .footer */
+	    margin-top: 0px;
     padding-top: 20px;
     /*border-top: 2px solid #2c3e50;*/
     
     text-align: center;
 }
-.site-footer > p {
+.footer > p {
     font-size: 10px;
     letter-spacing: .2em;
     padding-right: 6px;
@@ -113,8 +108,9 @@ p {
                 <span class="quote">Bureaucracy is an obstacle to be conquered with persistence, confidence and a bulldozer when necessary. </span>
             </p>
         </div>
+        <div class="push"></div>
     </div>
-    <footer class="site-footer">
+    <footer>
         <p>Another thing made with <span class="pomegranate">❤︎</span> by <a href="https://twitter.com/andreas_lz">andreas_lz</a>. Find this on <a href="https://github.com/lack3r/InspireMe">Github</a>
         </p>
     </footer>
