@@ -27,12 +27,6 @@ A page showing quotes to motivate/inspire you
 - [x] Show a random quote each time instead of showing them sequentially
 - [x] Add "created with love ..." on the bottom
 - [x] Added a triangular background
-- [x] Fixed footer for firefox
-- [x] Made font responsive
-- [x] Made background responsive
-- [x] Fixed an issue with unicode (heart) for firefox
-- [x] Replaced all libraries and stylecheets with cdns ones (minified)
-- [x] Fixed an off by one error, causing the website to not show quotes
 
 Copyright © 2016 Andreas Loizou <andreas . L . Loizou @ [gmail.com]> 
 
