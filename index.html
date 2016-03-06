@@ -8,12 +8,22 @@ Created by Andreas Loizou - LACK3R, @andreas_lz _
 |_____/_/   \_\____|_|\_\____/|_| \_\
 -->
 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" rel="stylesheet">
 
-<link href="stylesheets/animate.css" rel="stylesheet">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" rel="stylesheet">
 <style class="cp-pen-styles">
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:600);
+a {
+    color: #337ab7;
+}
+a:visited {
+    color: #337ab7;
+}
 .page-wrap {
-    //  position: relative;
+    /*//  position: relative;*/
+    
     min-height: 100%;
     /* equal to footer height */
     
@@ -23,10 +33,31 @@ Created by Andreas Loizou - LACK3R, @andreas_lz _
     content: "";
     display: block;
 }
+@media all and (min-width: 960px) {
+    body {
+        font-size: 40px;
+    }
+}
+@media all and (max-width: 959px) and (min-width: 600px) {
+    body {
+        font-size: 5vw;
+    }
+}
+@media all and (max-width: 599px) and (min-width: 50px) {
+    body {
+        font-size: 4vw;
+    }
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
-    font-size: 40px;
+    /*font-size: 40px;*/
+    overflow: hidden;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 .text {
     position: absolute;
@@ -62,9 +93,15 @@ p {
     color: #2c3e50;
 }
 .site-footer {
-    margin-top: 0px;
-    padding-top: 20px;
+    /*margin-top: 0px;
+    padding-top: 20px;*/
     /*border-top: 2px solid #2c3e50;*/
+    
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    /* Height of the footer */
     
     text-align: center;
 }
@@ -119,12 +156,34 @@ p {
 </body>
 
 
-<script src="javascripts/jquery.min.js"></script>
-<script src="javascripts/jquery.fittext.js"></script>
-<script src="javascripts/highlight.min.js"></script>
-<script src="javascripts/jquery.lettering.js"></script>
-<script src="javascripts/jquery.textillate.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FitText.js/1.2.0/jquery.fittext.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/textillate/0.4.0/jquery.textillate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/0.4.0/trianglify.min.js"></script>
 
+<script>
+function setBackground() {
+    var pattern = Trianglify({
+        width: window.innerWidth,
+        height: window.innerHeight,
+        x_colors: 'Spectral'
+    });
+    //document.body.appendChild(pattern.canvas());
+    var Canvas = document.createElement("canvas");
+
+    $('html').css({
+        'background-image': "url(" + pattern.canvas().toDataURL("image/png") + ")"
+    });
+}
+setBackground();
+</script>
+<script>
+$(window).resize(function() {
+    setBackground();
+});
+</script>
 <script>
 var quotes = document.getElementsByClassName('quote');
 var quoteArray = [];
@@ -132,7 +191,7 @@ var colors = ["wisteria", "belize", "pomegranate", "green", "midnight"];
 var currentQuote = randomQuoteIndex();
 var colorIndex = Math.floor((Math.random() * colors.length));
 function randomQuoteIndex() {
-    return Math.floor((Math.random() * quotes.length));
+    return Math.floor((Math.random() * quotes.length))+1;
 }
 function changeQuote() {
     $('.quote:nth-child(' + currentQuote + ')').addClass(colors[colorIndex]);
