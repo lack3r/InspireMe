@@ -117,37 +117,8 @@ p {
 <body>
     <div class="page-wrap">
         <div class="text">
-            <p>
-                <span class="quote">Impossible is nothing.</span>
-                <span class="quote">You are confined only by the walls you build yourself.</span>
-                <span class="quote">New opportunities will appear out of nowhere.</span>
-                <span class="quote">Don't limit your challenges - challenge your limits.</span>
-                <span class="quote">You got a dream... You gotta protect it.</span>
-                <span class="quote">If anything can go wrong, Fix it!</span>
-                <span class="quote">When given a choice... take both!</span>
-                <span class="quote">Multiple projects lead to multiple successes.</span>
-                <span class="quote">Start at the top then work your way up. </span>
-                <span class="quote">Do it by the book ... but be the author!</span>
-                <span class="quote">When forced to compromise, ask for more.</span>
-                <span class="quote">If you can't win, change the rules.</span>
-                <span class="quote">If you can't change the rules, then ignore them.</span>
-                <span class="quote">Perfection is not optional.</span>
-                <span class="quote">When faced without a challenge, make one.</span>
-                <span class="quote">"No" simply means begin again at one level higher.</span>
-                <span class="quote">Don't walk when you can run.</span>
-                <span class="quote">When in doubt: THINK!</span>
-                <span class="quote">Patience is a virtue, but persistence to the point of success is a blessing.</span>
-                <span class="quote">The faster you move, the slower time passes, the longer you live.</span>
-                <span class="quote">The best way to predict the future is to create it yourself!</span>
-                <span class="quote">The ratio of something to nothing is infinite.</span>
-                <span class="quote">If you think it is impossible, then it is... for you.</span>
-                <span class="quote">The day before something is a breakthrough it's a crazy idea.</span>
-                <span class="quote">If it were easy it would have been done already.</span>
-                <span class="quote">Without a target you'll miss it every time.</span>
-                <span class="quote">If you can't measure it, you can't improve it.</span>
-                <span class="quote">The world's most precious resource is the persistent and passionate human mind.</span>
-                <span class="quote">Bureaucracy is an obstacle to be conquered with persistence, confidence and a bulldozer when necessary. </span>
-                <span class="quote">Don't be afraid of being different, be afraid of being the same as everyone else.</span>
+		<!--quotes will be loaded here-->
+            <p class="all-quotes">
             </p>
         </div>
     </div>
@@ -165,7 +136,20 @@ p {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/textillate/0.4.0/jquery.textillate.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/0.4.0/trianglify.min.js"></script>
 
-<script>
+<script type="text/javascript">
+/*Load JSON containing all quotes*/
+//'https://raw.githubusercontent.com/lack3r/InspireMe/gh-pages/quotes.json'
+	   $.getJSON('quotes.json',function(data){
+            console.log('quotes loaded');
+            $.each(data.quotes,function(i){
+            $('.all-quotes').append('<span class="quote">'+data.quotes[i]+'</span>');
+            });
+			initQuoteChanging(); //Init quote changing
+			changeQuote();	//Call quote changing
+        }).error(function(){
+            console.log('error: json not loaded');
+        });
+
 function setBackground() {
     var pattern = Trianglify({
         width: window.innerWidth,
@@ -180,21 +164,25 @@ function setBackground() {
     });
 }
 setBackground();
-</script>
-<script>
+
+//If window is resised set background again
 $(window).resize(function() {
     setBackground();
 });
-</script>
-<script>
-var quotes = document.getElementsByClassName('quote');
-var quoteArray = [];
+var quotes; //contains all quotes. Will be initialised at initQuoteChanging() which will be called after the json file is loaded
 var colors = ["wisteria", "belize", "pomegranate", "green", "midnight"];
-var currentQuote = randomQuoteIndex();
+var currentQuote;
 var colorIndex = Math.floor((Math.random() * colors.length));
+
+function initQuoteChanging(){
+quotes = document.getElementsByClassName('quote');
+currentQuote = randomQuoteIndex();
+}
+
 function randomQuoteIndex() {
     return Math.floor((Math.random() * quotes.length))+1;
 }
+
 function changeQuote() {
     $('.quote:nth-child(' + currentQuote + ')').addClass(colors[colorIndex]);
     changeColor();
@@ -240,5 +228,5 @@ function changeColor() {
         colorIndex = colorIndex + 1;
     }
 }
-changeQuote();
+
 </script>
