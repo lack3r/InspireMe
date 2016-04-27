@@ -16,8 +16,6 @@ A page showing quotes to motivate/inspire you
 * and many others
 
 ### Todo:
-
-- [ ] Read quotes from a json file
 - [ ] Add a play/mute icon and play a motivational sound in the background
 - [ ] Find a few more beautuful colors and use them
 - [ ] Add credits for the quotes
@@ -27,6 +25,7 @@ A page showing quotes to motivate/inspire you
 - [x] Show a random quote each time instead of showing them sequentially
 - [x] Add "created with love ..." on the bottom
 - [x] Added a triangular background
+- [x] Read quotes from a json file
 
 Copyright © 2016 Andreas Loizou <andreas . L . Loizou @ [gmail.com]> 
 
